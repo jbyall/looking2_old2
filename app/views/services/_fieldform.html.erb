@@ -1,0 +1,6 @@
+  <%= fields_for :service, @service do |f| %>
+  <tr>
+      <td class="col-1-label"><%= f.label field %></td>
+      <td><%= f.text_field field, id: field%></td>
+  </tr>
+  <% end %>

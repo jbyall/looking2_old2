@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Looking2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="center">
+	<div id="logo"><%= image_tag "looking2banner.gif" %></div>
+	<nav class="navbar navbar-inverse navbar-override">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	    <%= link_to "Home", pages_home_path, class: "navbar-brand" %>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li><%= link_to "About", pages_about_path, id: "#" %></li>
+	      <!-- <li><a href="#"></a></li> -->
+	      <!-- <li><a href="#"></a></li> -->
+	    </ul>
+	  </div>
+	</nav>
+	<div class="content">
+		<%= yield %>
+	</div>
+</div>
+</body>
+</html>

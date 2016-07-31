@@ -1,0 +1,20 @@
+// Place all the styles related to the services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#example-aside
+{
+	width: 60%;
+	float: right;
+}
+#search-aside
+{
+	width: 30%;
+	float: right;
+}
+#example-container{
+	border:1px solid gray;
+	border-radius: 1px;
+}
+#new-service-spacer{
+	min-height: 25px;
+}

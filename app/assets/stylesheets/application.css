@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+
+}
+img{
+	max-width:100%;
+}
+h1{
+	font-size: 18px;
+}
+input[type=text]{
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding-left: 5px;
+}
+select{
+	border: 1px solid gray;
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+}
+input[type=text]:focus{
+	border: 1px solid red;
+	border-radius: 5px;
+}
+td{
+	padding-bottom: 5px !important;
+}
+.center{
+	width: 940px;
+	margin: auto;
+	padding: 10px;
+	/*font-family: Georgia, "Bitstream Charter", serif;*/
+	font-family: Helvetica, Arial, sans-serif;
+}
+.navbar{
+	box-sizing: content-box;
+	margin-bottom: 0px !important;
+}
+.content{
+	padding: 0 20px 0 20px;
+	/*background-color: #ccddff;*/
+	/*border: 1px solid #e6e6e6;*/
+	border-radius: 4px;
+}
+.result-title{
+	font-size: 22px;
+	font-weight: bold;
+	color: #cc3300;
+
+}
+.result-category{
+	font-size: 17px;
+	font-weight: bold;
+	color: #808080;
+	padding-left: 2px;
+}
+.category-tags{
+	font-size:14px;
+	color: #cc3300;
+	padding-left: 2px;
+}
+.result-location, .result-phone{
+	font-weight: bold;
+	padding-left: 3px;
+}
+.result-container{
+	padding-bottom:25px;
+}
+.col-1-label{
+	width:100px;
+	text-align: right;
+	padding-right:10px;
+}
+#logo{
+	border:1px solid red;
+	border-radius: 4px;
+}

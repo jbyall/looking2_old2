@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<section id="results-section">
+<%= render partial: "search" %>
+<% @services.each do |s| %>
+  <div class="result-container">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        
+          <tr><td><%= link_to s.title, s, class: "result-title"%></td></tr>
+          
+            <tr><td class="result-category"><%= s.category %></td></tr>
+            <tr><td class="category-tags"><%= s.category_tags.join(' | ') %></td></tr>
+            <tr><td class="result-location"><%= s.contact.city + ', ' + s.contact.state%></td></tr>
+            <tr><td class="result-phone"><%= s.contact.phone%></td></tr>
+        
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+</section>
+<br>
