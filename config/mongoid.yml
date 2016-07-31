@@ -140,3 +140,10 @@ development:
 #         read:
 #           mode: :primary
 #         max_pool_size: 1
+production:
+    clients:
+        default:
+            database: looking2
+            hosts:
+                - localhost:27017
+            options:
