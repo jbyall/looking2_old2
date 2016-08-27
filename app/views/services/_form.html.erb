@@ -20,16 +20,16 @@
 <div id="new-service-spacer"></div>
 
 
-<h3>Search Result Fields</h3>
+<h3>Search Result Creation</h3>
 <%= render partial: "example" %>
 <div class="form-fields">
 <%= f.label :title %>
-<%= f.text_field :title%>
+<%= f.text_field :title, placeholder: "Bob's Towing"%>
 </div>
 
 <div class="form-fields">
 <%= f.label :category %>
-<%= f.text_field :category %>
+<%= f.text_field :category, placeholder: "Auto Service"%>
 </div>
 
 <%= f.fields_for :category_tags do |item| %>
@@ -37,11 +37,11 @@
     <div class="array-label"><label>Primary Services</label></div>
     <!-- item.label item.index -->
     <div class="array-inputs">
-      <%= item.text_field item.index, id: "cat1"%>
-      <%= item.text_field item.index, id: "cat2"%>
-      <%= item.text_field item.index, id: "cat3"%>
-      <%= item.text_field item.index, id: "cat4"%>
-      <%= item.text_field item.index, id: "cat5"%>
+      <%= item.text_field item.index, id: "cat1", placeholder: "Towing"%>
+      <%= item.text_field item.index, id: "cat2", placeholder: "Roadside Assistance"%>
+      <%= item.text_field item.index, id: "cat3", placeholder: "Inspection"%>
+      <%= item.text_field item.index, id: "cat4", placeholder: "Repairs"%>
+      <%= item.text_field item.index, id: "cat5", placeholder: "Maintenance"%>
     </div>
   <% end %>
   </div>
@@ -49,13 +49,13 @@
 <%= f.fields_for :contact, @service.contact do |contact_form|%>
         <div class="form-fields">
           <%= contact_form.label "City" %>
-          <%= contact_form.text_field :city %>
+          <%= contact_form.text_field :city, placeholder: "Pittsburgh"%>
         </div>
         <div class="form-fields">
           <%= contact_form.label "State" %>
           <!-- <%= contact_form.text_field :state %> -->
           <select name="service[contact][state]" id="service_contact_state">
-            <option></option>
+            <option value="" disabled selected>Select state</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -111,7 +111,7 @@
         </div>
         <div class="form-fields">
           <%= contact_form.label "Phone" %>
-          <%= contact_form.text_field :phone %>
+          <%= contact_form.text_field :phone, placeholder: "555.555.5555" %>
         </div>
 <% end %>
 

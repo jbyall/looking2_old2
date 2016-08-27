@@ -31,15 +31,16 @@ input[type=text]{
 select{
 	border: 1px solid gray;
 	border-radius: 4px;
-	height: 100%;
+	height: 24px;
+	width:163px;
 	text-align: left;
 }
 input[type=text]:focus{
 	border: 1px solid red;
 	border-radius: 5px;
 }
-td{
-	/*padding-bottom: 5px !important;*/
+label{
+	text-align: right;
 }
 .form-fields, .array-field{
 	padding-bottom: 7px;
@@ -56,6 +57,7 @@ td{
 	width:140px;
 	display:table-cell;
 	vertical-align: middle;
+	text-align: right;
 }
 .array-inputs{
 	display:table-cell;
