@@ -1,4 +1,4 @@
-<aside class="example-aside">
+<aside class="example-aside" id="example-details">
 	<h3>Listing Details:</h3>
       <!-- <div id="example-container" class="result-container">
         <a id="title-ex" class="result-title" href="#">Title</a> 
@@ -8,20 +8,40 @@
         <p id="phone-ex" class="results-phone">555.555.5555</p>
       </div> -->
 <div class="result-container example-container">
-    <table>
-      <thead>
-        <tr>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td class="title-ex-data"><a id="title-ex-detail" class="result-title" href="#">Bob's Towing - Auto Service</a></td>
-          </tr>
-	          <tr><td id="tags-ex-detail" class="category-tags">Towing | Roadside Assistance | Inspection | Repairs | Maintenance</td></tr>
-	          <tr><td id="location-ex-detail" class="result-location">Pittsburgh, PA - Shadyside</td></tr>
-	          <tr><td id="phone-ex-detail" class="result-phone">555.555.5555</td></tr>
-      </tbody>
-    </table>
+  <div class="title-ex-detail">
+    <p id="title-ex-detail" class="result-title">Bob's Towing - Auto Service</p>
+  </div>
+  <div class="brag-ex-detail">
+    <p id="brag-ex">Best customer service in town</p>
+  </div>
+  <div class="services-ex-detail">
+    <div class="services-label">
+      <label>Services:</label>
+    </div>
+    <div class="services-ex-list">
+      <p class="category-tags" id="cat1-ex-detail">Towing</p>
+      <p class="category-tags" id="cat2-ex-detail">Roadside Assistance</p>
+      <p class="category-tags" id="cat3-ex-detail">Inspection</p>
+      <p class="category-tags" id="cat4-ex-detail">Repairs</p>
+      <p class="category-tags" id="cat5-ex-detail">Maintenance</p>
+    </div>
+  </div>
+  <div class="summary-ex">
+    <div><label>Summary:</label></div>
+    <div>
+      <p id="tell-me-more-detail">
+      Tell me more...
+    </div>
+  </div>
+  <div class="contact-ex-detail">
+    <div><label>Contact Details:</label></div>
+    <dir>
+      <p id="name-ex-detail">Bob's Towing</p>
+      <p id="street-ex-detail">101 ABC Ave</p>
+      <p id="city-state-zip-ex-detail">Pittsburgh, PA 15000</p>
+      <p id="phone-ex-detail">555.555.5555</p>
+      <p id="url-ex-detail">www.website.com</p>
+    </dir>
+  </div>
   </div>
   </aside>

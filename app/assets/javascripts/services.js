@@ -41,18 +41,24 @@ function updateCategoryTags(){
 	  		cArray = [];
 	  		if ($("#cat1").val()) {
 	  			cArray.push(c1);
+	  			$("#cat1-ex-detail").text(c1);
+
 	  		}
 	  		if ($("#cat2").val()) {
 	  			cArray.push(c2);
+	  			$("#cat2-ex-detail").text(c2);
 	  		}
 	  		if ($("#cat3").val()) {
 	  			cArray.push(c3);
+	  			$("#cat3-ex-detail").text(c3);
 	  		}
 	  		if ($("#cat4").val()) {
 	  			cArray.push(c4);
+	  			$("#cat4-ex-detail").text(c4);
 	  		}
 	  		if ($("#cat5").val()) {
 	  			cArray.push(c5);
+	  			$("#cat5-ex-detail").text(c5);
 	  		}
 	  		cArray.forEach(function(item){
 	  			output = output + item + separator;
@@ -150,10 +156,70 @@ function ready(){
 	  // Updating the phone number
 	  $("#service_contact_phone").keyup(updatePhone);
 
-	  // resetting any empty values
-	  // if(!$("service_title").val() && !$("service_title").is(":focus")){
-	  // 	$("service_title").text("Bob's Towing");
-	  // }
+
+	  $("#service_brag").keyup(function(){
+	  	var str = $(this).val();
+	  	 if(!$(this).val()){
+	  	 	$("#brag-ex").text("Best customer service in town");
+	  	 }
+	  	 else{
+	  		$("#brag-ex").text(str);
+	  	 }
+	  });
+
+
+	  $("#service_tell_me_more").keyup(function(){
+	  	var str = $(this).val();
+	  	 if(!$(this).val()){
+	  	 	$("#tell-me-more-detail").text("Tell me more...");
+	  	 }
+	  	 else{
+	  		$("#tell-me-more-detail").text(str);
+	  	 }
+	  });
+
+	  $("#service_contact_name").keyup(function(){
+	  	var str = $(this).val();
+	  	 if(!$(this).val()){
+	  	 	$("#name-ex-detail").text("Bob's Towing");
+	  	 }
+	  	 else{
+	  		$("#name-ex-detail").text(str);
+	  	 }
+	  });
+
+
+	  $("#service_contact_street").keyup(function(){
+	  	var str = $(this).val();
+	  	 if(!$(this).val()){
+	  	 	$("#street-ex-detail").text("101 Abc Ave");
+	  	 }
+	  	 else{
+	  		$("#street-ex-detail").text(str);
+	  	 }
+	  });
+
+
+	  $("#service_contact_zip").keyup(function(){
+	  	var str = $("#service_contact_city").val() + ", " + $("#service_contact_state").val() + " " + $(this).val();
+	  	 if(!$(this).val()){
+	  	 	$("#city-state-zip-ex-detail").text("Pittsburgh, PA 15000");
+	  	 }
+	  	 else{
+	  		$("#city-state-zip-ex-detail").text(str);
+	  	 }
+	  });
+
+	  $("#service_contact_url").keyup(function(){
+	  	var str = $("#service_contact_url").val();
+	  	 if(!$(this).val()){
+	  	 	$("#url-ex-detail").text("www.website.com");
+	  	 }
+	  	 else{
+	  		$("#url-ex-detail").text(str);
+	  	 }
+	  });
+	  
 };
 
 

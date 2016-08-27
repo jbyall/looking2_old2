@@ -83,6 +83,31 @@ label{
 .title-ex-data{
 	display:inline-block;
 }
+.services-ex-detail div{
+	display:inline-block;
+	vertical-align: top;
+}
+.summary-ex div{
+	display: table-cell;
+	vertical-align: top;
+}
+.search-info div{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#tell-me-more-detail
+{
+	padding-left: 3px;
+}
+.services-ex-detail p{
+	padding-bottom: 0px !important;
+	margin-bottom: 0px !important;
+}
+.contact-ex-detail p{
+	padding-bottom: 0px !important;
+	margin-bottom: 0px !important;
+}
 .content{
 	padding: 0 20px 0 20px;
 	/*background-color: #ccddff;*/
@@ -121,4 +146,13 @@ label{
 #logo{
 	border:1px solid red;
 	border-radius: 4px;
+}
+#example-details{
+	margin-top: 260px;
+}
+.actions{
+	padding-top: 40px;
+}
+#search-instructions{
+	margin-top: 45px;
 }

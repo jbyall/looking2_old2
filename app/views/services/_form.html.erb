@@ -120,11 +120,9 @@
         </div>
 <% end %>
 
-
+<%= render partial: "exampleDetails" %>
 <h4>Location Tags</h4>
-<p>Your customers may search for locations with names that</br>
-are commonly used to refer to your area. Use the optional location</br>
-tags below to help people find you more easily:</p>
+<p>Your customers may search for locations with names that are commonly used to refer to your area. Use the optional location tags below to help people find you more easily:</p>
 <%= f.fields_for :location_tags do |item| %>
     <div class="array-field">
     <div class="array-label"><label>Location Tags</label></div>
@@ -138,15 +136,15 @@ tags below to help people find you more easily:</p>
     <% end %>
     </div>
 <h3>Detailed Listing Creation</h3>
-<%= render partial: "exampleDetails" %>
+
 <p>Let's finish up your listing with the details your customers will see when they click on your search</br>result.</p>
 <div class="form-fields">
   <%= f.label :brag %>
-  <%= f.text_field :brag %>
+  <%= f.text_area :brag, placeholder: "Best customer service in town" %>
 </div>
 <div class="form-fields">
   <%= f.label :tell_me_more %>
-  <%= f.text_field :tell_me_more %>
+  <%= f.text_area :tell_me_more, placeholder: "Tell me more..." %>
 </div>
 
 <h4>Additional contact details (optional)</h4>
@@ -175,14 +173,79 @@ tags below to help people find you more easily:</p>
     <!--</div>
   </div>
 </div>-->
-<h3>How our search works</h3>
-<p>add stuff here</p>
-<p>Title is the first line if your listing. This could be the name of your business, or leave it blank and the name field (way below) will be used as the title</p>
-<p>The category should be 1-3 words describing your service. For example "Master Electrician" or "Dog Walker" or "Computer Repair Service"</p>
-<p>Category tags are used to provide more details about your service. They are used in our search function and can also be clicked by Lookers to provide convenient searching</p>
-<p>A few notes about category tags:<p>
-<ul><li>the first 5 are displayed in search results</li>
-<li>you may include 10 total</li>
-<li>all included tags are used in our search function</li></ul>
+<div id="search-instructions">
+<h3>More info</h3>
+<div class="search-info">
+  <div class="search-info-label">
+    <label>Title</label>
+  </div>
+  <div class="search-info-description">
+    <p>Title is the first line if your listing. This could be the name of your business, or leave it blank and the name field (way below) will be used as the title</p>
+  </div>
 
+  <div class="search-info-label">
+    <label>Service type</label>
+  </div>
+  <div class="search-info-description">
+    <p>The service type should be 1-3 words describing your business or occupation. For example "Master Electrician" or "Dog Walker" or "Computer Repair Service". If nothing comes to mind, use whatever you put on your business tax return.</p>
+  </div>
+
+  <div class="search-info-label">
+    <label>Primary Services</label>
+  </div>
+  <div class="search-info-description">
+    <p>Primary Services are used to provide more details about your business or occupation. They are used in our search function and can also be clicked by Lookers to provide convenient searching.</p>
+  </div>
+
+  <div class="search-info-label">
+    <label>City</label>
+  </div>
+  <div class="search-info-description">
+    <p>The name of the city as it appears on the official address of your business location.</p>
+  </div>
+
+  <div class="search-info-label">
+    <label>State</label>
+  </div>
+  <div class="search-info-description">
+    <p></p>
+  </div>
+
+  <div class="search-info-label">
+    <label>Neighborhood</label>
+  </div>
+  <div class="search-info-description">
+    <p>If the city you listed is not specific enough (e.g. Pittsburgh), the neighborhood will provide Lookers with a better understanding of your location. We recommend using a well known name (e.g. Shadyside).
+    </p>
+  </div>
+
+  <div class="search-info-label">
+    <label>Location Tags</label>
+  </div>
+  <div class="search-info-description">
+    <p>Searching for things by location is a matter of personal preference. We have provided 5 extra location tags for your Listing. These tags are used in our location search, so be sure to include any names that will be useful to the Lookers.</p>
+  </div>
+
+  <div class="search-info-label">
+    <label>Brag</label>
+  </div>
+  <div class="search-info-description">
+    <p>Enter your slogan, sales pitch, awards, or anything else you would like to brag about. Keep it clean and feel free to put whatever you want. 100 character limit.</p>
+  </div>
+
+  <div class="search-info-label">
+    <label>Tell me more</label>
+  </div>
+  <div class="search-info-description">
+    <p>Think of this as an "About Us" page on a website, or anything else you think will tempt a customer your way. 1000 character limit.</p>
+  </div>
+
+  <div class="search-info-label">
+    <label>Additional contact details</label>
+  </div>
+  <div class="search-info-description">
+    <p>These are optional fields. Keep in mind that, depending on your service, leaving some of these details out might leave potential customers hanging!</p>
+  </div>
+</div>
+</div>
 <% end %>
