@@ -78,6 +78,7 @@ function updateCategoryTags(){
 
 	  	// $("#tags-ex").text(c1 + " | " + c2 + " | " + c3 + " | " + c4 + " | " + c5);
 	  	$("#tags-ex").text(output);
+	  	$("#tags-ex-detail").text(output);
 	  };
 function updateLocation(){
 		var output;
@@ -98,6 +99,7 @@ function updateLocation(){
 	  		output = city + ", " + state;
 	  	}
 	  	$("#location-ex").text(output);
+	  	$("#location-ex-detail").text(output);
 };
 function updatePhone(){
 	var phone = "555.555.5555";
@@ -105,6 +107,7 @@ function updatePhone(){
 		phone = $("#service_contact_phone").val();
 	}
 	$("#phone-ex").text(phone);
+	$("#phone-ex-detail").text(phone);
 }
 
 function ready(){
@@ -117,6 +120,7 @@ function ready(){
 	  	 else{
 	  		$("#title-ex").text(str);
 	  	 }
+	  	 $("#title-ex-detail").text($("#title-ex").text() + " - " + $("#category-ex").text());
 	  });
 
 	  // Updating the category
@@ -128,6 +132,7 @@ function ready(){
 	  	else{
 	  		$("#category-ex").text(str);
 	  	}
+	  	$("#title-ex-detail").text($("#title-ex").text() + " - " + $("#category-ex").text());
 	  });
 
 	  // Updating the tags

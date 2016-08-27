@@ -15,13 +15,14 @@
 
 <p>Looking2 allows you to provide whatever information you want. In order to avoid absolute chaos, let's fit your details into some general containers. This will help create clean and intuitive search results for the people who are trying to find you.</p>
 
-<p>Test it out below to see how your entries will look in search results. A detailed description of each field is provided below.</p>
+<p>Test it out with the interactive form below. A detailed description of each field is provide at the bottom of the page.</p>
 
 <div id="new-service-spacer"></div>
 
 
 <h3>Search Result Creation</h3>
-<%= render partial: "example" %>
+<p>Let's start with some basic information to see how your listing</br>will look in a search result:</p>
+<%= render partial: "exampleResult" %>
 <div class="form-fields">
 <%= f.label :title %>
 <%= f.text_field :title, placeholder: "Bob's Towing"%>
@@ -120,67 +121,57 @@
 <% end %>
 
 
-<h3>Bonus Fields</h3>
-<label>Location Tags</label>
-
+<h4>Location Tags</h4>
+<p>Your customers may search for locations with names that</br>
+are commonly used to refer to your area. Use the optional location</br>
+tags below to help people find you more easily:</p>
 <%= f.fields_for :location_tags do |item| %>
-    <div class="form-fields">
-      <%= item.label item.index %>
+    <div class="array-field">
+    <div class="array-label"><label>Location Tags</label></div>
+    <div class="array-inputs" id="location-tag-inputs">
+      <%= item.text_field item.index%>
+      <%= item.text_field item.index%>
+      <%= item.text_field item.index%>
+      <%= item.text_field item.index%>
       <%= item.text_field item.index%>
     </div>
-    <div class="form-fields">
-      <%= item.label item.index %>
-      <%= item.text_field item.index%>
+    <% end %>
     </div>
-    <div class="form-fields">
-      <%= item.label item.index %>
-      <%= item.text_field item.index%>
-    </div>
-    <div class="form-fields">
-      <%= item.label item.index %>
-      <%= item.text_field item.index%>
-    </div>
-    <div class="form-fields">
-      <%= item.label item.index %>
-      <%= item.text_field item.index%>
-    </div>
-  <% end %>
+<h3>Detailed Listing Creation</h3>
+<%= render partial: "exampleDetails" %>
+<p>Let's finish up your listing with the details your customers will see when they click on your search</br>result.</p>
+<div class="form-fields">
+  <%= f.label :brag %>
+  <%= f.text_field :brag %>
+</div>
+<div class="form-fields">
+  <%= f.label :tell_me_more %>
+  <%= f.text_field :tell_me_more %>
+</div>
 
-
-<p>Freedom to provide whatever details you want [keep it clean].</p>
-
-    <%= render partial: "fieldform", locals: {field: :brag, custom: nil} %>
-    <%= render partial: "fieldform", locals: {field: :tell_me_more, custom: nil} %>
-    
-  <!-- <div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse1">Add more contact details (optional)</a>
-      </h4>
-    
-    <div id="collapse1" class="panel-collapse collapse"> -->
-<p>Some more contact details</p>
+<h4>Additional contact details (optional)</h4>
 
 <%= f.fields_for :contact, @service.contact do |contact_form|%>
-  
+        <div class="form-fields">
           <%= contact_form.label "Name" %>
           <%= contact_form.text_field :name %>
-        
-        
+        </div>
+        <div class="form-fields">
           <%= contact_form.label "Street" %>
           <%= contact_form.text_field :street %>
-        
-        
+        </div>
+        <div class="form-fields">
           <%= contact_form.label "Zip" %>
           <%= contact_form.text_field :zip %>
-        
-        
+        </div>
+        <div class="form-fields">
           <%= contact_form.label "Website" %>
           <%= contact_form.text_field :url %>
-        
+        </div>
 <% end %>
-
+  <div class="actions">
+    <%= f.submit %>
+  </div>
     <!--</div>
   </div>
 </div>-->
@@ -193,7 +184,5 @@
 <ul><li>the first 5 are displayed in search results</li>
 <li>you may include 10 total</li>
 <li>all included tags are used in our search function</li></ul>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>
