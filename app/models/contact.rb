@@ -7,24 +7,25 @@ class Contact
   #field :url
   #embedded_in :physician
   #ßattr_accessor :name, :street, :local, :phone, :url
-  attr_reader :name, :street, :city, :state, :zip, :phone, :url
+  attr_reader :name, :street, :city, :state, :zip, :local, :phone, :url
   # attr_accessible :name, :street, :local, :phone, :url
 	def initialize
 		
 	end
-	def initialize(name, street, city, state, zip, phone, url)
+	def initialize(name, street, city, state, zip, local, phone, url)
 	
 		@name = name
 		@street = street
     @city = city
     @state = state
     @zip = zip
+    @local = local
 		@phone = phone
 		@url = url
 	end
 
 	def mongoize
-		[ name, street, city, state, zip, phone, url ]
+		[ name, street, city, state, zip, local, phone, url ]
 	end
   class << self
 
@@ -32,7 +33,7 @@ class Contact
     # this custom class from it.
     def demongoize(object)
     	if object != nil
-      		Contact.new(object[0], object[1], object[2], object[3], object[4], object[5], object[6])
+      		Contact.new(object[0], object[1], object[2], object[3], object[4], object[5], object[6], object[7])
       	end
     end
 
@@ -41,7 +42,7 @@ class Contact
     def mongoize(object)
     	#debug()
       if object != nil
-	      	Contact.new(object[:name], object[:street], object[:city], object[:state], object[:zip], object[:phone], object[:url]).mongoize
+	      	Contact.new(object[:name], object[:street], object[:city], object[:state], object[:zip], object[:local], object[:phone], object[:url]).mongoize
 	  end
     end
 

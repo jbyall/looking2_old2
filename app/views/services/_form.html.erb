@@ -28,7 +28,7 @@
 </div>
 
 <div class="form-fields">
-<%= f.label :category %>
+<%= f.label "Service Type" %>
 <%= f.text_field :category, placeholder: "Auto Service"%>
 </div>
 
@@ -108,6 +108,10 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select>
+        </div>
+        <div class="form-fields">
+          <%= contact_form.label "Neighborhood" %>
+          <%= contact_form.text_field :local, placeholder: "Shadyside" %>
         </div>
         <div class="form-fields">
           <%= contact_form.label "Phone" %>

@@ -56,7 +56,7 @@ label{
 .array-label{
 	width:140px;
 	display:table-cell;
-	vertical-align: middle;
+	/*vertical-align: middle;*/
 	text-align: right;
 }
 .array-inputs{
@@ -64,7 +64,7 @@ label{
 	padding-left: 3px;
 }
 .array-inputs input{
-	margin-bottom: 3px;
+	margin-bottom: 1px;
 }
 .center{
 	width: 940px;
