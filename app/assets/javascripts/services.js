@@ -12,16 +12,20 @@ function updateLocation(){
 	  	var output = city + ", " + state;
 	  	$("#location-ex").text(output);
 };
+function updatePhone(){
+	var phone = $("#service_contact_phone").val();
+	$("#phone-ex").text(phone);
+}
 
 function ready(){
 	// Updating the title
-	$("#title").keyup(function(){
+	$("#service_title").keyup(function(){
 	  	var str = $(this).val();
 	  	$("#title-ex").text(str);
 	  });
 
 	  // Updating the category
-	  $("#category").keyup(function(){
+	  $("#service_category").keyup(function(){
 	  	var str = $(this).val();
 	  	$("#category-ex").text(str);
 	  });
@@ -49,6 +53,7 @@ function ready(){
 	  //});
 
 	  // Updating the phone number
+	  $("#service_contact_phone").keyup(updatePhone);
 
 };
 

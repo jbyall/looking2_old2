@@ -18,54 +18,43 @@
 <p>Test it out below to see how your entries will look in search results. A detailed description of each field is provided below.</p>
 
 <div id="new-service-spacer"></div>
-<%= render partial: "example" %>
-<table>
+
+
 <h3>Search Result Fields</h3>
-<tr>
-<%= render partial: "fieldform", locals: {field: :title, custom: nil} %>
-</tr>
-<tr>
-<%= render partial: "fieldform", locals: {field: :category, custom: "Service Type"} %>
-</tr>
-</table>
+<%= render partial: "example" %>
+<div class="form-fields">
+<%= f.label :title %>
+<%= f.text_field :title%>
+</div>
 
-<table>
+<div class="form-fields">
+<%= f.label :category %>
+<%= f.text_field :category %>
+</div>
+
 <%= f.fields_for :category_tags do |item| %>
-  <tr>
-  <td><label>Primary Services</label></td>
-        
-        <td><%= item.text_field item.index, id: "cat1"%></td>
-  </tr>
-  <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index, id: "cat2"%></td>
-    </tr>
-    <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index, id: "cat3"%></td>
-    </tr>
-    <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index, id: "cat4"%></td>
-    </tr>
-    <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index, id: "cat5"%></td>
-    </tr>
+  <div class="array-field">
+    <div class="array-label"><label>Primary Services</label></div>
+    <!-- item.label item.index -->
+    <div class="array-inputs">
+      <%= item.text_field item.index, id: "cat1"%>
+      <%= item.text_field item.index, id: "cat2"%>
+      <%= item.text_field item.index, id: "cat3"%>
+      <%= item.text_field item.index, id: "cat4"%>
+      <%= item.text_field item.index, id: "cat5"%>
+    </div>
   <% end %>
-</table>
+  </div>
 
-<label>Location &amp Phone</label>
-<table>
 <%= f.fields_for :contact, @service.contact do |contact_form|%>
-        <tr>
-          <td class="col-1-label"><%= contact_form.label "City" %></td>
-          <td><%= contact_form.text_field :city %></td>
-        </tr>
-        <tr>
-          <td class="col-1-label"><%= contact_form.label "State" %></td>
-          <!-- <td><%= contact_form.text_field :state %></td> -->
-          <td><select name="service[contact][state]" id="service_contact_state">
+        <div class="form-fields">
+          <%= contact_form.label "City" %>
+          <%= contact_form.text_field :city %>
+        </div>
+        <div class="form-fields">
+          <%= contact_form.label "State" %>
+          <!-- <%= contact_form.text_field :state %> -->
+          <select name="service[contact][state]" id="service_contact_state">
             <option></option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -119,75 +108,75 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select>
-        </tr>
-        <tr>
-          <td class="col-1-label"><%= contact_form.label "Phone" %></td>
-          <td><%= contact_form.text_field :phone %></td>
-        </tr>
+        </div>
+        <div class="form-fields">
+          <%= contact_form.label "Phone" %>
+          <%= contact_form.text_field :phone %>
+        </div>
 <% end %>
-</table>
+
 
 <h3>Bonus Fields</h3>
 <label>Location Tags</label>
-<table>
+
 <%= f.fields_for :location_tags do |item| %>
-  <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index%></td>
-    </tr>
-    <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index%></td>
-    </tr>
-    <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index%></td>
-    </tr>
-    <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index%></td>
-    </tr>
-    <tr>
-      <td class="col-1-label"><%= item.label item.index %></td>
-      <td><%= item.text_field item.index%></td>
-    </tr>
+    <div class="form-fields">
+      <%= item.label item.index %>
+      <%= item.text_field item.index%>
+    </div>
+    <div class="form-fields">
+      <%= item.label item.index %>
+      <%= item.text_field item.index%>
+    </div>
+    <div class="form-fields">
+      <%= item.label item.index %>
+      <%= item.text_field item.index%>
+    </div>
+    <div class="form-fields">
+      <%= item.label item.index %>
+      <%= item.text_field item.index%>
+    </div>
+    <div class="form-fields">
+      <%= item.label item.index %>
+      <%= item.text_field item.index%>
+    </div>
   <% end %>
-</table>
+
 
 <p>Freedom to provide whatever details you want [keep it clean].</p>
-<table>
+
     <%= render partial: "fieldform", locals: {field: :brag, custom: nil} %>
     <%= render partial: "fieldform", locals: {field: :tell_me_more, custom: nil} %>
-    </table>
+    
   <!-- <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#collapse1">Add more contact details (optional)</a>
       </h4>
-    </tr>
+    
     <div id="collapse1" class="panel-collapse collapse"> -->
 <p>Some more contact details</p>
-<table>
+
 <%= f.fields_for :contact, @service.contact do |contact_form|%>
-  <tr>
-          <td class="col-1-label"><%= contact_form.label "Name" %></td>
-          <td><%= contact_form.text_field :name %></td>
-        </tr>
-        <tr>
-          <td class="col-1-label"><%= contact_form.label "Street" %></td>
-          <td><%= contact_form.text_field :street %></td>
-        </tr>
-        <tr>
-          <td class="col-1-label"><%= contact_form.label "Zip" %></td>
-          <td><%= contact_form.text_field :zip %></td>
-        </tr>
-        <tr>
-          <td class="col-1-label"><%= contact_form.label "Website" %></td>
-          <td><%= contact_form.text_field :url %></td>
-        </tr>
+  
+          <%= contact_form.label "Name" %>
+          <%= contact_form.text_field :name %>
+        
+        
+          <%= contact_form.label "Street" %>
+          <%= contact_form.text_field :street %>
+        
+        
+          <%= contact_form.label "Zip" %>
+          <%= contact_form.text_field :zip %>
+        
+        
+          <%= contact_form.label "Website" %>
+          <%= contact_form.text_field :url %>
+        
 <% end %>
-</table>
+
     <!--</div>
   </div>
 </div>-->
