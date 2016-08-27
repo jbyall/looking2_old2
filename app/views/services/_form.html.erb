@@ -16,18 +16,24 @@
 <p>Looking2 allows you to provide whatever information you want. In order to avoid absolute chaos, let's fit your details into some general containers. This will help create clean and intuitive search results for the people who are trying to find you.</p>
 
 <p>Test it out below to see how your entries will look in search results. A detailed description of each field is provided below.</p>
-<%= render partial: "example" %>
-<div id="new-service-spacer"></div>
-<table>
-<%= render partial: "fieldform", locals: {field: :title} %>
 
-<%= render partial: "fieldform", locals: {field: :category} %>
+<div id="new-service-spacer"></div>
+<%= render partial: "example" %>
+<table>
+<h3>Search Result Fields</h3>
+<tr>
+<%= render partial: "fieldform", locals: {field: :title, custom: nil} %>
+</tr>
+<tr>
+<%= render partial: "fieldform", locals: {field: :category, custom: "Service Type"} %>
+</tr>
 </table>
-<h4>Category Tags</h4>
+
 <table>
 <%= f.fields_for :category_tags do |item| %>
   <tr>
-        <td class="col-1-label"><%= item.label item.index%></td>
+  <td><label>Primary Services</label></td>
+        
         <td><%= item.text_field item.index, id: "cat1"%></td>
   </tr>
   <tr>
@@ -49,7 +55,7 @@
   <% end %>
 </table>
 
-<p>Quick Location &amp Phone</p>
+<label>Location &amp Phone</label>
 <table>
 <%= f.fields_for :contact, @service.contact do |contact_form|%>
         <tr>
@@ -120,7 +126,9 @@
         </tr>
 <% end %>
 </table>
-<p>Location Tags</p>
+
+<h3>Bonus Fields</h3>
+<label>Location Tags</label>
 <table>
 <%= f.fields_for :location_tags do |item| %>
   <tr>
@@ -148,8 +156,8 @@
 
 <p>Freedom to provide whatever details you want [keep it clean].</p>
 <table>
-    <%= render partial: "fieldform", locals: {field: :brag} %>
-    <%= render partial: "fieldform", locals: {field: :tell_me_more} %>
+    <%= render partial: "fieldform", locals: {field: :brag, custom: nil} %>
+    <%= render partial: "fieldform", locals: {field: :tell_me_more, custom: nil} %>
     </table>
   <!-- <div class="panel-group">
   <div class="panel panel-default">

@@ -1,6 +1,10 @@
   <%= fields_for :service, @service do |f| %>
-  <tr>
-      <td class="col-1-label"><%= f.label field %></td>
+  
+  		<% if custom == nil %>	
+      		<td class="col-1-label"><%= f.label field %></td>
+
+      	<% else %>
+      		<td class="col-1-label"><label><%= custom.to_s %></label></td>
+      	<% end %>
       <td><%= f.text_field field, id: field%></td>
-  </tr>
   <% end %>
