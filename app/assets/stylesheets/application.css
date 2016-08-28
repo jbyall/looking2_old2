@@ -50,6 +50,9 @@ label{
 	display:inline-block;
 	vertical-align: top;
 }
+.search-fields label{
+	width:60px;
+}
 .array-field{
 	display:table-cell;
 }
@@ -152,6 +155,12 @@ label{
 }
 .actions{
 	padding-top: 40px;
+}
+.search-actions{
+	margin-left:66px; 
+}
+.search-actions input{
+	width:160px;
 }
 #search-instructions{
 	margin-top: 45px;

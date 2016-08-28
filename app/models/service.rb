@@ -2,7 +2,7 @@ class Service
 	include Mongoid::Document
   	include Mongoid::Timestamps::Created
   	include Mongoid::Timestamps::Updated
-
+    validates :title, :category, :presence => true
   field :contact, type: Contact
   field :title, type: String
   field :category, type: String
