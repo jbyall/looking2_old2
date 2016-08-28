@@ -30,12 +30,21 @@ class ServicesController < ApplicationController
     # else
     #   query = query.chop.chop
     # end
-    query = {}
-    query[:title] = /#{@title}/i unless @title.blank?
-    query[:category] = /#{@category}/i unless @category.blank?
+    whereQuery = {}
+    categoryQuery = {}
+    whereQuery[:title] = /#{@title}/i unless @title.blank?
+    categoryQuery[:category] = /#{@category}/i unless @category.blank?
+    categoryQuery[:category_tags] = [/#{@category}/i] unless @category.blank?
     #query[:categorySearchDisplay] = @category unless @category.blank?
     
-    @services = Service.all(query)
+    # @services = Service.all(query)
+    if @category != ""
+      @services = Service.or({:category_tags.in => categoryQuery[:category_tags]},{category: categoryQuery[:category]}).where(whereQuery)  
+    else
+      @services = Service.all(whereQuery)
+    end
+    
+
     if @services.count > 0
       render "index"
     else
